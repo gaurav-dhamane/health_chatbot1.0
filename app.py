@@ -26,7 +26,7 @@ severity_levels = [
 api_endpoint = "https://api.openai.com/v1/chat/completions"
 
 # Define your ChatGPT API key
-api_key = "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"
+api_key = "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"
 
 @app.route("/")
 def index():
