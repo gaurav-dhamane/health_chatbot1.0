@@ -26,7 +26,7 @@ severity_levels = [
 api_endpoint = "https://api.openai.com/v1/chat/completions"
 
 # Define your ChatGPT API key
-api_key = "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"
+api_key = "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"
 
 @app.route("/")
 def index():
@@ -55,6 +55,7 @@ def chat():
 
     response = requests.post(api_endpoint, headers=headers, json=data)
 
+    print(response.json())
     if response.status_code == 200:
         result = response.json()
         
