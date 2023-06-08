@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request,jsonify
 import requests
+import os
+
 
 
 
@@ -26,7 +28,8 @@ severity_levels = [
 api_endpoint = "https://api.openai.com/v1/chat/completions"
 
 # Define your ChatGPT API key
-api_key = "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"
+api_key = api_key = os.getenv("API_KEY")
+
 
 @app.route("/")
 def index():
