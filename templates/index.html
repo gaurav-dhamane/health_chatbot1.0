@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-window">
+            <div class="chat-header">
+                <h1>Chatbot</h1>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="message-container">
+                    <div class="assistant-message">
+                        <p>Welcome! How can I assist you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <select id="condition">
+                    {% for condition in conditions %}
+                    <option value="{{ condition }}">{{ condition }}</option>
+                    {% endfor %}
+                </select>
+                <select id="severity">
+                    {% for severity in severities %}
+                    <option value="{{ severity }}">{{ severity }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" id="user-input">
+                <button id="send-button">Send</button>
+ 
+                <button id="voice-input-button"><i class="fas fa-microphone"></i></button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
